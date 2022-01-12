@@ -60,10 +60,13 @@ Logos are added on a project basis, I have them stored in a separate folder loca
     - after testing the copied code everything works as intended, and I can start adding content through Twig
     - I added a footer with some content and styled it using bootstrap
     - I then added the <aside> and the menu block and using bootstrap styled it to be on the left of the page
+    - I created a new file `src/Twig/RandomQuote.php` and in there I created a new Twig function based on the code provided [here](https://github.com/becodeorg/ANT-Lamarr-5.34/blob/main/3.The-Mountain/Symfony/3.Twig/quotes.php)
+    - Since I have autowiring enabled Symfony automatically registered the function as a service, and I added it in my pages
+    - After plating around with the styling some more I finished this exercise feeling like I have a basic understanding of Twig and what it can do
 
 ## What I learned from this exercise
 <!--here you can write anything from a short summary on the subject of the exercise, a readable description of the new skills/knowledge you acquire, to an in depth clarification. As long as it helps you retain what you learned, or easily find the information when working on future projects-->
-
+Using Twig makes the front-end of a php project that much simpler to code. The syntax is easy to learn and implement, the built-in functionality is extensive and I look forward to using it more often.
 
 ## To Do
 
@@ -74,11 +77,11 @@ objectives they will be moved up into the timeline section and ticked off using 
 
 ### Must-haves
 
-* footer with @becode
-* menu to the left with links to home and about pages
-* on the about page: the date in 3 different formats below the existing menu (extending the block)
-* on the homepage: set the name to be capitalised as John Smith, no matter how the user inputs
-* add a random quote generator on the homepage
+* footer with @becode :heavy_check_mark:
+* menu to the left with links to home and about pages :heavy_check_mark:
+* on the about page: the date in 3 different formats below the existing menu (extending the block) :heavy_check_mark:
+* on the homepage: set the name to be capitalised as John Smith, no matter how the user inputs :heavy_check_mark:
+* add a random quote generator on each page below the main content :heavy_check_mark:
 
 ### Nice to have
 
