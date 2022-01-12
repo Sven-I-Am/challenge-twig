@@ -15,15 +15,16 @@
         {% endblock %}
     </head>
     <body>
-    <aside class="float-start">
+    <aside class="float-start h-100">
         {% block menu %}
             <ul class="list-group">
-                <li class="list-group-item"><a href="{{ path('homepage')}}">Home</a></li>
-                <li class="list-group-item"><a href="{{ path('about-me')}}">About</a></li>
+                <li class="list-group-item px-5 py-3 fs-2"><a class="link-dark text-decoration-none" href="{{ path('homepage')}}">Home</a></li>
+                <li class="list-group-item px-5 py-3 fs-2"><a class="link-dark text-decoration-none" href="{{ path('about-me')}}">About</a></li>
+                <li class="list-group-item px-5 py-3 fs-5">{{ name|title }}</li>
             </ul>
         {% endblock %}
     </aside>
-    {% block body %}
+    {% block content %}
         <style>
             .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
             .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }

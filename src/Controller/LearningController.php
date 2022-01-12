@@ -33,7 +33,7 @@ class LearningController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $user = $form->getData();
-            return $this->changeMyName($user);
+            return $this->changeMyName($user, $form);
         }
 
         return $this->renderForm('base.html.twig', [
@@ -47,13 +47,15 @@ class LearningController extends AbstractController
     /**
      * @route("/change", name="change", methods={"POST"})
      */
-    public function changeMyName($user): Response
+    public function changeMyName($user, $form): Response
     {
         $session = $this->requestStack->getSession();
         // stores an attribute in the session for later reuse
 
-        $this->render('learning/change.html.twig', [
+        $this->renderForm('learning/change.html.twig', [
             'page' => 'Change',
+            'name' => $user->getName(),
+            'form' => $form,
         ]);
         $session->set('userName', $user->getName());
         return $this->redirectToRoute('homepage');
@@ -73,7 +75,7 @@ class LearningController extends AbstractController
         } else {
             $response = $this->render('learning/index.html.twig', [
                 'name' => $name,
-                'page' => 'About me',
+                'date' => new \DateTime(),
                 'text' => $ipsum,
             ]);
         }
